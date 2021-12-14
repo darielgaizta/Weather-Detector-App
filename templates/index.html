@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+		<title>Weather Detector</title>
+	</head>
+	<body>
+		<header>
+			<h1>Weather Detector App</h1>
+		</header>
+		<main>
+			<div class="container">
+				<form method="POST" action="">
+					{% csrf_token %}
+					<input type="text" name="city" placeholder="Enter Your City" id="city">
+					<input type="submit" name="submit" value="Search" id="submit">
+				</form>
+				{% if city %}
+				<div class="content">
+					<h2>{{city}}, {{cc}}</h2>
+					<h3>{{weather}}: {{desc}}</h3>
+					<p>at {{date}} GMT+0</p>
+					<ul>
+						<li>Coordinate: {{coordinate}}</li>
+						<li>Temperature: {{temp}}K</li>
+						<li>Pressure: {{pressure}}</li>
+						<li>Humidity: {{humidity}}</li>
+					</ul>
+				</div>
+				{% endif %}
+			</div>
+		</main>
+		<footer>
+			<p>&copy; Dariel</p>
+		</footer>
+	</body>
+</html>

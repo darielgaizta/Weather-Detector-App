@@ -1,0 +1,32 @@
+body {
+	background-color: #eeeeee;
+	font-family: monospace;
+}
+
+header {
+	background-color: #151515;
+	color: white;
+	padding: 5px;
+	margin: 10px 0;
+	border-radius: 3px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+}
+
+#city {
+	height: 20px;
+	width: 240px;
+}
+
+#submit {
+	padding: 4px;
+}
+
+@media (max-width: 720px) {
+	footer {
+		position: relative;
+	}
+}
